@@ -1,0 +1,114 @@
+/*universal styles*/
+
+*{
+    font-family: 'Lora', serif;
+}
+
+.hideDiv{
+display:none;
+}
+
+.showDiv{
+display:inline;
+}
+/*home page*/
+.home-background{
+    background-color: #000;
+    color: #fff;
+}
+
+.cfg-logo{
+    width: 100px;
+    height: 130px;
+}
+
+.preview-image{
+    border: 3px solid #acd580;
+    width:200px;
+    height:150px;
+}
+
+.challenge:hover{
+    border: 2px solid #fff;
+    border-radius: 20px;
+    
+}
+
+.navbar-color{
+    background-color: #acd580;
+}
+
+/*Challenge1*/
+.challenge1-background{
+    background-color: #a6a6a6;
+}
+.challenge1-body{
+    background-color: #acd580;
+    color: #000;
+}
+
+.half-size-container{
+    width:25% !important;
+}
+
+.certificate-body{
+    background-color: #fff;
+}
+.black-line{
+    border-right:5px solid #000;
+}
+
+.certificate-heading{
+    color: #acd580;
+}
+
+.black-line-horiz{
+    border: solid 3px #000;
+}
+
+/*Challenge 3*/
+.green-background{
+    background-color: #acd580;
+    color: #000;
+}
+
+/*Challenge 4*/
+.challenge2-4-background{
+    background-color: #545454;
+}
+.white-background{
+    background-color: #fff;
+}
+
+/*Challenge 5*/
+.left-column{
+    border-right: solid 3px #000;
+    color:#acd580;
+}
+
+.payment-button{
+    width:70% !important;
+    height:60% !important;
+}
+
+.order-image{
+    border: 3px solid #acd580;
+}
+
+.black-text{
+    color:#000;
+}
+
+.ordered-button{
+    background-color: #acd580;
+    border:1px solid #000;
+    color: #000;
+}
+.pale-grey-background{
+    background-color: #f6f5f5;
+}
+
+.payment-button-final{
+    width:50% !important;
+    height:30% !important;
+}

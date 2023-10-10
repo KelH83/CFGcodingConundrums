@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 5</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Navbar-->     
+    <div class="row sticky-top">
+        <ul class="nav justify-content-center nav-tabs navbar-color">
+            <li class="nav-item">
+              <a class="nav-link link-dark" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-dark" href="./challenge1.html">Challenge 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-dark" href="./challenge2.html">Challenge 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-dark" href="./challenge3.html">Challenge 3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-dark" href="./challenge4.html">Challenge 4</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-dark active" aria-current="page" href="./challenge5.html">Challenge 5</a>
+            </li>            
+          </ul>
+    </div>
+
+    <!--Challenge body-->
+    <!--Card detail input div-->
+    <div id="orderInput" class="container-fluid">
+      <div class="row p-5">
+        <!--Left column-->
+        <div class="col-6 left-column">
+          <!--Payment options-->
+          <div class="row ps-2 pt-3 text-center mx-auto mb-5 w-75">
+            <h1 class="fs-2 pb-3">Payment Method</h1>
+            <img class="img-fluid mx-auto payment-button" src="./images/codecal.png" alt="codecal payment button"/>
+            <img class="img-fluid mx-auto payment-button" src="./images/codecalpay.png" alt="codecal pay later payment button"/>
+            <img class="img-fluid mx-auto payment-button" src="./images/kloderna.png" alt="kloderna payment button"/>
+            <img class="img-fluid mx-auto payment-button" src="./images/card.png" alt="card payment button"/>
+          </div>
+          <!--Payment details form-->
+          <div id="paymentForm" class="row mt-0">
+            <form name="paymentInput">
+              <p class="fs-3">Card Details</p>
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Card Number" id="cardNumber" aria-describedby="cardNumber">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Expiration" class="form-control" id="expiration">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="CVV" class="form-control" id="cvv">
+              </div>
+              <p class="fs-3">Billing Address</p>
+              <div class="mb-3">
+                <input type="text" placeholder="First Name" class="form-control" id="firstName">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Last Name" class="form-control" id="lastName">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Address" class="form-control" id="address">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="County" class="form-control" id="county">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Postcode" class="form-control" id="postcode">
+              </div>
+              <button type="submit" class="btn btn-dark mb-3 fs-4" onClick="payment(this.form)">Pay</button><!--Sends the form info to the function when clicked-->
+            </form>
+
+          </div>
+        </div>
+        <!--Right column-->
+        <div class="col-6">
+          <h1 class="fs-2 text-center pb-5">Order summary</h1>
+          <div class="row ps-2 pt-3 text-center mb-5">            
+            <div class="col-4">
+              <img class="img-fluid mx-auto order-image" src="./images/laptop.png" alt="image of a laptop"/>
+            </div>
+            <div class="col-4">
+              <p class="fs-4">Laptop</p>
+            </div>
+            <div class="col-4">
+              <p class="fs-4">£699.00</p>
+            </div>         
+          </div>
+          <div class="row ps-2 pt-3 text-center mb-5">            
+            <div class="col-4">
+              <img class="img-fluid mx-auto order-image" src="./images/headphones.png" alt="image of headphones"/>
+            </div>
+            <div class="col-4">
+              <p class="fs-4">Wireless headphones</p>
+            </div>
+            <div class="col-4">
+              <p class="fs-4">£199.00</p>
+            </div>         
+          </div>
+          <!--subtotal-->
+          <div class="row text-end">
+            <div class="col-6">
+            <p class="fs-4">Subtotal</p>
+            <p class="fs-4">VAT</p>
+            <p class="fs-4 fw-bold">Total</p>
+            </div>
+            <div class="col-6">
+            <p class="fs-4">£898.00</p>
+            <p class="fs-4">£179.60</p>
+            <p class="fs-4 fw-bold">£1077.60</p>
+            </div>
+          </div>
+
+        </div>
+       
+      </div>
+    </div>
+    <!--Hidden card details/order placed div-->
+    <div id="orderSummary" class="container-fluid hideDiv">
+      <div class="row">
+        <div class="col-1"></div>
+        <!--left column-->
+        <div class="col-5 left-column">
+          <img class="img-fluid" src="./images/tick.png" alt="tick symbol"/>
+          <h2 class="display-5 pb-5">Thank you for your purchase!</h2>
+          <p class="fs-4 black-text">Your order number is #0012345</p>
+          <p class="fs-5 black-text">We will email you an order confirmation with details and tracking info.</p>
+          <button class="fs-4 rounded-pill ordered-button p-2">Continue shopping</button>
+          <h2 class="fs-1 pt-4">Create account for next time</h2>
+          <p class="fs-5 black-text">You can easily track your order status by creating an account</p>
+          <button class="fs-4 rounded-pill ordered-button p-2 mb-5">Create account</button>
+        </div>
+        <!--right column-->
+        <div class="col-5">
+        <div class="row mt-5">
+          <div class="col-5">
+            <p class="fs-4">Product name</p>
+            <p class="fs-5">Laptop</p>
+            <p class="fs-5">Wireless headphones</p>
+          </div>
+
+          <div class="col-2">
+            <p class="fs-4">SKU</p>
+            <p class="fs-5">LP-567</p>
+            <p class="fs-5">WH-123</p>
+          </div>
+          <div class="col-2">
+            <p class="fs-4">Price</p>
+            <p class="fs-5">£699.00</p>
+            <p class="fs-5">£199.00</p>
+          </div>
+          <div class="col-1">
+            <p class="fs-4">Qty</p>
+            <p class="fs-5">1</p>
+            <p class="fs-5">1</p>
+          </div>
+          <div class="col-2">
+            <p class="fs-4">Subtotal</p>
+            <p class="fs-5">£699.00</p>
+            <p class="fs-5">£199.00</p>
+          </div>
+
+          </div>
+        <!--Final totals section-->
+        <div class="row pale-grey-background text-end mt-5">
+          <div class="col-6">
+            <p class="fs-3">Subtotal</p>
+            <p class="fs-3">VAT</p>
+            <p class="fs-3 fw-bold">Total</p>
+          </div>
+          <div class="col-6">
+            <p class="fs-3">£898.00</p>
+            <p class="fs-3">£179.60</p>
+            <p class="fs-3 fw-bold">£1077.60</p>
+          </div>
+        </div>
+        <!--Order details(Address etc)-->
+        <div class="row">          
+          <h2 class="fs-2">Order information</h2>
+          <h2 class="fs-4 mt-3">Order date: <span id="orderDate"></span></h2>
+          <div class="col-6 mt-3">
+            <p class="fs-4">Shipping/billing address:</p>
+            <span id="forename" class="fs-5"></span> <span id="surname" class="fs-5"></span>
+            <br>
+            <span id="orderAddress" class="fs-5"></span>
+            <br>
+            <span id="orderCounty" class="fs-5"></span>
+            <br>
+            <span id="orderPostcode" class="fs-5"></span>
+          </div>
+          <div class="col-6 mt-3">
+            <p class="fs-4">Shipping method:</p>
+            <p class="fs-5">DPD next day delivery</p>
+          </div>
+          <div class="row mt-5">
+            <div class="col-6">
+              <p class="fs-4">Payment Method:</p>
+              <p class="fs-5">Credit card: <span id="hiddenCard"></span></p>
+            </div>
+            <div class="col-6">
+              <img class="img-fluid payment-button-final" src="./images/card.png" alt="debit/credit card logo"/>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    </div>
+
+  
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+</body>
+</html>

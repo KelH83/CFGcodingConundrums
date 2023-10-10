@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 3</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+</head>
+<body class="challenge1-background" onLoad="animateBoxes()">
+    <!--Navbar-->     
+    <div class="row sticky-top">
+        <ul class="nav justify-content-center nav-tabs navbar-color">
+            <li class="nav-item">
+              <a class="nav-link link-dark" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-dark"  href="./challenge1.html">Challenge 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-dark"  href="./challenge2.html">Challenge 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-dark active" aria-current="page" href="./challenge3.html">Challenge 3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-dark" href="./challenge4.html">Challenge 4</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-dark" href="./challenge5.html">Challenge 5</a>
+            </li>            
+          </ul>
+    </div>
+
+    <!--Challenge body-->
+  <div id="searchMatrix" class="container-fluid text-center">
+    <div class="row mx-auto mt-5">
+       <!--Matrix moving image-->
+      <div class="col-3">
+       <span id="box1A"></span>
+    </div>
+    <!--Matrix search box--> 
+    <div class="col-6 green-background">
+      <h1 class="display-5">Records reference finder</h1>
+      <p class="fs-3">Please enter the customer id below to find the appropriate records location</p>
+      <form name="matrixInput">
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Customer Id" id="matrixNumber" aria-describedby="customerId">
+        </div>
+        <button type="button" class="btn btn-dark mb-3" onClick="matrixSearch(this.form)">Submit</button><!--Sends the form info to the function when clicked-->
+     </form>
+    </div>
+    <!--Matrix moving image-->
+    <div class="col-3">
+      <span id="box1B"></span>
+    </div>
+    </div>
+  </div>
+
+  <!--Result-->
+  <div id="searchMatrixResults" class="container-fluid text-center hideDiv">
+    <div class="row mx-auto mt-5">
+       <!--Matrix moving image-->
+      <div class="col-3">
+       <span id="box2A"></span>
+    </div>
+    <!--Matrix search box--> 
+    <div class="col-6 green-background">
+      <h1 class="display-5">Records reference finder</h1>
+      <p class="fs-3">The entire matrix records has been searched</p>
+      <p class="fs-4"><span id="matrixResult"></span></p>
+      <button class="fs-4 rounded-pill p-2 mb-5" onClick="location.reload()">Find another reference</button>
+    </div>
+    <!--Matrix moving image-->
+    <div class="col-3">
+     <span id="box2B"></span>
+      </div>
+    </div>
+  </div>
+ 
+    
+
+  
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+</body>
+</html>

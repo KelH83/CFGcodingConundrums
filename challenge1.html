@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 1</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+</head>
+<body class="challenge1-background">
+    <!--Navbar-->     
+    <div class="row sticky-top">
+        <ul class="nav justify-content-center nav-tabs navbar-color">
+            <li class="nav-item">
+              <a class="nav-link link-dark" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-dark active" aria-current="page" href="./challenge1.html">Challenge 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-dark" href="./challenge2.html">Challenge 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-dark" href="./challenge3.html">Challenge 3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-dark" href="./challenge4.html">Challenge 4</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-dark" href="./challenge5.html">Challenge 5</a>
+            </li>            
+          </ul>
+    </div>
+
+    <!--Challenge body-->
+    <div id="gradeCheckerForm" class="row">
+      <div class="col-sm-0 col-md-4"></div>
+    <div class="col-sm-12 col-md-4">
+    <div class="container-fluid text-center mt-5">
+      <div class="row challenge1-body rounded">
+        <h1 class="fs-1">Student grade checker</h1>               
+      <!--Form to input the values to be used by the grade checker function-->
+      <form name="examInput">
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Teacher Name" id="teacherName" aria-describedby="teacherName">
+        </div>
+        <div class="mb-3">
+          <input type="text" placeholder="Student Name" class="form-control" id="studentName">
+        </div>
+        <div class="mb-3">
+          <input type="text" placeholder="Course Code" class="form-control" id="courseCode">
+        </div>
+        <div class="mb-3">
+          <input type="text" placeholder="Exam Mark" class="form-control" id="examMark">
+        </div>
+        
+        <button type="submit" class="btn btn-dark mb-3" onClick="certificate(this.form)">Submit</button><!--Sends the form info to the function when clicked-->
+      </form>
+      </div>
+  </div>
+    </div>
+    <div class="col-sm-0 col-md-4"></div>
+    </div>
+    <!-- Distinction certificate -->
+    <div id="certificate1" class="container-fluid mt-3 hideDiv">
+      <div class="row">
+        <!--left side cert-->
+        <div class="col-1 challenge1-body black-line">
+        </div>
+        <!--Main cert body-->
+        <div class="col-9 certificate-body pt-2">
+          <h1 class="display-2 certificate-heading">Intro To Coding</h1>
+          <h2 class="fs-1">Challenge</h2>
+          <div class="row mt-5">
+            <div class="col-2"></div>
+            <div class="col-9 text-center">
+              <p class="fs-3 pb-3">This certificate is awarded to</p>
+              <span id="studentDist" class="display-2"></span>
+              <hr class="black-line-horiz">
+              <p class="fs-3 pb-5">for the successful completion of the course
+                achieving a <span id="gradeDist"></span>
+              </p>          
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+        <!--Right side cert-->
+        <div class="col-2 certificate-body pt-2">
+          <img class="img-fluid cfg-logo" src="./images/CFGlogoBlack.png" alt="code first girls logo"/>
+        </div>          
+      </div>
+       <!--Second half of cert-->
+      <div class="row">
+        <div class="col-1 challenge1-body black-line pt-5">
+        </div>
+        <div class="col-4 certificate-body pt-5">
+          <p class="fs-3 pt-5">Issue date:   <span id="dateDist"></span>
+          </p>
+          <p class="fs-3 pt-2">Validation code:   <span id="courseDist"></span>
+          </p>
+        </div>
+        <div class="col-4 certificate-body pt-5">
+        </div>
+        <div class="col-3 certificate-body pt-5 text-center"><img class="img-fluid cfg-logo" src="./images/signature.png" alt="teache signature"/>
+          <hr class="black-line-horiz">
+          <span id="teacherDist" class="fs-3"></span>
+        </div>      
+      </div>
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-4 mt-3 text-center">
+          <button type="button" class="btn btn-dark mb-3 fs-4" onClick="print()">Print</button>
+        </div>
+        <div class="col-4 mt-3 text-center">
+          <button type="button" class="btn btn-dark mb-3 fs-4" onClick="location.reload()">Check another grade</button>
+        </div>
+        <div class="col-2"></div>
+      </div>
+
+    </div>
+    <!--Pass certificate-->
+    <div id="certificate2" class="container-fluid mt-3 hideDiv">
+      <div class="row">
+        <!--left side cert-->
+        <div class="col-1 challenge1-body black-line">
+        </div>
+        <!--Main cert body-->
+        <div class="col-9 certificate-body pt-2">
+          <h1 class="display-2 certificate-heading">Intro To Coding</h1>
+          <h2 class="fs-1">Challenge</h2>
+          <div class="row mt-5">
+            <div class="col-2"></div>
+            <div class="col-9 text-center">
+              <p class="fs-3 pb-3">This certificate is awarded to</p>
+              <span id="studentPass" class="display-2"></span>
+              <hr class="black-line-horiz">
+              <p class="fs-3 pb-5">for the successful completion of the course
+                achieving a <span id="gradePass"></span>
+              </p>          
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+        <!--Right side cert-->
+        <div class="col-2 certificate-body pt-2">
+          <img class="img-fluid cfg-logo" src="./images/CFGlogoBlack.png" alt="code first girls logo"/>
+        </div>          
+      </div>
+       <!--Second half of cert-->
+      <div class="row">
+        <div class="col-1 challenge1-body black-line pt-5">
+        </div>
+        <div class="col-4 certificate-body pt-5">
+          <p class="fs-3 pt-5">Issue date:   <span id="datePass"></span>
+          </p>
+          <p class="fs-3 pt-2">Validation code:   <span id="coursePass"></span>
+          </p>
+        </div>
+        <div class="col-4 certificate-body pt-5">
+        </div>
+        <div class="col-3 certificate-body pt-5 text-center"><img class="img-fluid cfg-logo" src="./images/signature.png" alt="teache signature"/>
+          <hr class="black-line-horiz">
+          <span id="teacherPass" class="fs-3"></span>
+        </div>      
+      </div>
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-4 mt-3 text-center">
+          <button type="button" class="btn btn-dark mb-3 fs-4" onClick="print()">Print</button>
+        </div>
+        <div class="col-4 mt-3 text-center">
+          <button type="button" class="btn btn-dark mb-3 fs-4" onClick="location.reload()">Check another grade</button>
+        </div>
+        <div class="col-2"></div>
+      </div>
+
+    </div>
+    <!--Failure notice-->
+    <div id="failure" class="container-fluid mt-3 mb-3 hideDiv">
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 challenge1-body rounded">
+          <p class="text-center fs-2">
+            <span id="teacherFail"></span>, unfortunately, <span id="studentFail"></span> has not managed to reach a passing grade for course code <span id="courseFail"></span>. 
+            <br>
+            <br>
+            Please notify them of their <span id="gradeFail"></span> and pass on information about their next steps including;
+            <br>
+            <br>
+          </p>
+          <p>
+            <ul class="ps-5 fs-3">
+              <li>Re-sit dates</li>
+              <li>Revision guides</li>
+              <li>Alternative courses</li>
+              <li>Careers advisor contact details</li>
+              <li>Mental health support details</li>
+            </ul>
+          </p>
+          <div class="row text-center">
+            <div class="col-4"></div>
+            <div class="col-4">
+              <button type="button" class="btn btn-dark mb-3 fs-4" onClick="location.reload()">Check another grade</button>
+            </div>
+            <div class="col-4"></div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+      </div>
+
+    </div>    
+
+  
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+</body>
+</html>
